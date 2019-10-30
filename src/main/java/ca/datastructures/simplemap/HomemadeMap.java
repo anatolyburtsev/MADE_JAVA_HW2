@@ -105,13 +105,7 @@ public class HomemadeMap<K, V> implements SimpleMap<K, V> {
             return null;
         }
         node = node.findByKeyOrLastInChain(key);
-        V value;
-        if (node.getKey().equals(key)) {
-            value = node.getValue();
-        } else {
-            value = null;
-        }
-        return value;
+        return node.getKey().equals(key) ? node.getValue() : null;
     }
 
     @Override
